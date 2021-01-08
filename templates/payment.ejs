@@ -1,0 +1,208 @@
+<%- include('./partials/nav.ejs')%>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<div class="new" style="padding-top: 200px; padding-bottom: 140px">
+  <form method="POST" action="/redirect">
+    <table
+      border="0"
+      align="center"
+      cellpadding="0"
+      cellspacing="0"
+      class="gradientbg"
+    >
+      <thead>
+        <tr>
+          <td colspan="3" align="center" valign="middle"></td>
+        </tr>
+        <tr>
+          <td
+            colspan="3"
+            align="center"
+            valign="middle"
+            class="signup-headingbg borderleftradius borderrightradius"
+          >
+            Registration Page
+          </td>
+        </tr>
+      </thead>
+      <tr>
+        <td align="right" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <!-- <tr>
+            <td class="labelfont">MERCHANT NAME: </td>
+            <td class="form-control">
+            <input type="text" name="MERCHANT_NAME" class="signuptextfield" value="Bhartipay Demo" autocomplete="off"/>
+            </td>
+            </tr> -->
+      <tr>
+        <td class="labelfont">ORDER ID:</td>
+        <td class="form-control">
+          <input
+            type="text"
+            name="ORDER_ID"
+            id="O_ID"
+            value=<%=Math.floor(Math.random()*100000)%>
+            class="signuptextfield"
+            autocomplete="off"
+            [(ngModel)]="paymentModel.ORDER_ID"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="labelfont">AMOUNT:</td>
+        <td class="form-control">
+          <input
+            type="number"
+            name="AMOUNT"
+            class="signuptextfield"
+            value="150"
+            autocomplete="off"
+            readonly
+          />
+        </td>
+      </tr>
+      <tr>
+        <!-- <td class="labelfont">TXNTYPE:</td> -->
+        <td class="form-control">
+          <input
+            type="text"
+            name="TXNTYPE"
+            class="signuptextfield"
+            value="SALE"
+            autocomplete="off"
+            hidden
+          />
+        </td>
+      </tr>
+      <!-- <tr>
+            <td class="labelfont">MERCHANT PAYMENT TYPE: </td>
+            <td class="form-control">
+            <select name="MERCHANT_PAYMENT_TYPE" class="signupselectfield">
+            <option value="">Select Type</option>
+            <option value="CC">CC</option>
+            <option value="DC">DC</option>
+            <option value="NB">NB</option>
+            <option value="WL">WL</option>
+            </select>
+            </td>
+            </tr> -->
+      <tr>
+        <td class="labelfont">CUSTOMER NAME:</td>
+        <td class="form-control">
+          <input
+            type="text"
+            name="CUST_NAME"
+            class="signuptextfield"
+            autocomplete="off"
+          />
+        </td>
+      </tr>
+      <tr>
+        <!-- <td class="labelfont">CUSTOMER NAME:</td> -->
+        <!-- <td class="form-control">
+          <input type="text" name="PAY_ID" class="signuptextfield" value="2001141020561000" autocomplete="off" readonly="" />
+        </td> -->
+      </tr>
+      <tr>
+        <td class="labelfont">CUSTOMER ADDRESS:</td>
+        <td class="form-control">
+          <input
+            type="text"
+            name="CUST_STREET_ADDRESS1"
+            class="signuptextfield"
+            autocomplete="off"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="labelfont">CUSTOMER ZIP:</td>
+        <td class="form-control">
+          <input
+            type="text"
+            name="CUST_ZIP"
+            class="signuptextfield"
+            autocomplete="off"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="labelfont">CUSTOMER PHONE:</td>
+        <td class="form-control">
+          <input
+            type="text"
+            name="CUST_PHONE"
+            class="signuptextfield"
+            autocomplete="off"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="labelfont">CUSTOMER EMAILID:</td>
+        <td class="form-control">
+          <input
+            type="text"
+            name="CUST_EMAIL"
+            class="signuptextfield"
+            autocomplete="off"
+          />
+        </td>
+      </tr>
+      <!-- <tr>
+            <td class="labelfont">PRODUCT DESC: </td>
+            <td class="form-control">
+            <input type="text" name="PRODUCT_DESC" class="signuptextfield" value="Demo Transaction" autocomplete="off"/>
+            </td>
+            </tr> -->
+      <tr>
+        <!-- <td class="labelfont">CURRENCY CODE:</td> -->
+        <td class="form-control">
+          <input
+            type="text"
+            name="CURRENCY_CODE"
+            class="signuptextfield"
+            value="365"
+            autocomplete="off"
+            readonly
+            hidden
+          />
+        </td>
+      </tr>
+      <tr>
+        <!-- <td class="labelfont">RETURN URL:</td> -->
+        <td class="form-control">
+          <input
+            type="text"
+            name="RETURN_URL"
+            class="signuptextfield"
+            value=""
+            autocomplete="off"
+            hidden
+          />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="3" align="center" valign="middle">
+          <input type="hidden" name="payment_check" value="true" />
+          <input
+            type="submit"
+            name="button"
+            id="button"
+            class="signupbutton"
+            value="Pay Now"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" align="center" valign="middle">&nbsp;</td>
+      </tr>
+    </table>
+  </form>
+</div>
+<%- include('./partials/footer.ejs')%>
